@@ -15,6 +15,7 @@
     background-color: #5C8C39;
     color:white;
     font-weight: bold;
+    border-radius: 0;
 }
 
 .react-calendar button:hover {

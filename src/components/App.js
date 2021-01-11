@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import ToDoCalendar from './ToDoCalendar';
 import RenderedList from './RenderedList';
 import './App.css'
@@ -6,14 +6,18 @@ import './App.css'
 
 const App = () => {
 
+    const [date, onChange] = useState(new Date());
+
+
     return(
     <div>
         <h1>To Do List</h1>   
         <div className='calendar'>
-            {ToDoCalendar()}
+            <ToDoCalendar date={date} onChange={onChange}/>
         </div><br />
+
         <div>
-            {RenderedList()}
+            <RenderedList date={date}/>
         </div>
 
     </div> 

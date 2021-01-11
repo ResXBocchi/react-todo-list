@@ -1,17 +1,25 @@
-import React, {useState} from 'react';
-import data from '../data/data.json';
-import ToDoList from './ToDoList'
+import React, {useState, useEffect} from 'react';
+import ToDoList from './ToDoList';
+import ToDoForm from './ToDoForm';
 
 
-const RenderedList = () =>{
 
-    const [ toDoList, setToDoList ] = useState(data);
+const RenderedList = ({date}) =>{
 
-    console.log(toDoList)
+    const [ toDoList, setToDoList ] = useState(window.localStorage.getItem('todolist') ? JSON.parse(window.localStorage.getItem('todolist')) : [],);
+
+    useEffect(() => {
+        localStorage.setItem('todolist', JSON.stringify(toDoList));
+      }, [toDoList]);
 
     return(
-        <div className='renderedList'>
-            <ToDoList toDoList={toDoList}/>
+        <div>
+            <div className='form'>
+                <ToDoForm date={date} toDoList={toDoList} setToDoList={setToDoList}/>
+            </div>
+            <div className='renderedList'>
+                <ToDoList toDoList={toDoList}/>
+            </div>
         </div>
     )
 };

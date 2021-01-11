@@ -4,17 +4,16 @@ import 'react-calendar/dist/Calendar.css';
 import './ToDoCalendar.css'
 
 
-const ToDoCalendar = () => {
+const ToDoCalendar = ({date,onChange}) => {
 
-    const [value, onChange] = useState(new Date());
 
-    console.log(value)
+    console.log(date)
 
     return (
       <div>
         <Calendar
           onChange={onChange}
-          value={value}
+          value={date}
           locale='pt-BR'
         />
       </div>
