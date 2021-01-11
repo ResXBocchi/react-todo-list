@@ -8,11 +8,14 @@ const ToDoCalendar = () => {
 
     const [value, onChange] = useState(new Date());
 
+    console.log(value)
+
     return (
       <div>
         <Calendar
           onChange={onChange}
           value={value}
+          locale='pt-BR'
         />
       </div>
     );
