@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './ToDoForm.css'
 
 const ToDoForm = ({toDoList,setToDoList,date}) => {
     const [userInput, setUserInput] = useState('');
@@ -13,8 +14,10 @@ const ToDoForm = ({toDoList,setToDoList,date}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(userInput)
-        addTask(userInput);
-        setUserInput('');
+        if (userInput){
+            addTask(userInput);
+            setUserInput('');
+        }
     }
     
     const handleChange = (e) => {
@@ -25,9 +28,8 @@ const ToDoForm = ({toDoList,setToDoList,date}) => {
 
     return (
         <form  onSubmit={handleSubmit}>
-            <input value={userInput} type='text' onChange={handleChange} placeholder='Selecione a data e insira uma tarefa'>
-            </input>
-            <button className='button' value='Cadastrar tarefa' type='submit'></button>
+            <input value={userInput} type='text' onChange={handleChange} placeholder='Selecione a data e insira uma tarefa' className="input"/><br/>
+            <button className='submitbutton' value='submit' type='submit'>Inserir tarefa</button>
         </form>
     )
 }

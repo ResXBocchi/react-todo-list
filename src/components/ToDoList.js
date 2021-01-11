@@ -6,11 +6,11 @@ const ToDoList = ({toDoList, date}) => {
     return(
         <div>
             {toDoList.map((todo, id) => {
-                if (Date.parse(todo.deadline) == Date.parse(date)){
+                if (Date.parse(todo.deadline) === Date.parse(date)){
                     return(
                         <ToDo todo={todo}  key={id} date={date}/>
                     )
-                }
+                };return false;
             })}         
         </div> 
             

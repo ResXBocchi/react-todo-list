@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
-
+import './RenderedList.css'
 
 
 const RenderedList = ({date}) =>{
@@ -13,7 +13,7 @@ const RenderedList = ({date}) =>{
       }, [toDoList]);
 
     return(
-        <div>
+        <div className='renderedlist'>
             <div className='form'>
                 <ToDoForm date={date} toDoList={toDoList} setToDoList={setToDoList}/>
             </div>

@@ -1,0 +1,10 @@
+.submitbutton{
+    min-height: 20px;
+    min-width:90px;
+}
+
+.input{
+    margin: 5px;
+    min-width:340px;
+    text-align: center;
+}

@@ -4,7 +4,7 @@ import './ToDo.css'
 const ToDo = ({todo}) => {
 
     return(
-    <div>
+    <div className='todo'>
         <div className={todo.complete? "done": "" }>
             <>{todo.task} - </>
                 
@@ -12,7 +12,6 @@ const ToDo = ({todo}) => {
         <div>
             <>{Date.parse(todo.deadline)}</>
         </div>
-        <br />
     </div>
 
         
