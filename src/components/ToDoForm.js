@@ -5,7 +5,7 @@ const ToDoForm = ({toDoList,setToDoList,date}) => {
     
     const addTask = (userInput) => {        
         let copy = [...toDoList];
-        copy = [...copy, { id: toDoList.length + 1, task: userInput, date:date, complete: false }];
+        copy = [...copy, { id: toDoList.length + 1, task: userInput, deadline:date, complete: false }];
         setToDoList(copy);
 
       }

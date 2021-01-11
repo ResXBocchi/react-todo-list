@@ -18,7 +18,7 @@ const RenderedList = ({date}) =>{
                 <ToDoForm date={date} toDoList={toDoList} setToDoList={setToDoList}/>
             </div>
             <div className='renderedList'>
-                <ToDoList toDoList={toDoList}/>
+                <ToDoList toDoList={toDoList}date={date}/>
             </div>
         </div>
     )

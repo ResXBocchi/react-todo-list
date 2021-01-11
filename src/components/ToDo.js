@@ -4,9 +4,17 @@ import './ToDo.css'
 const ToDo = ({todo}) => {
 
     return(
-    <div className={todo.complete? "done": todo.da }>
-        <>{todo.task}</>          
-    </div> 
+    <div>
+        <div className={todo.complete? "done": "" }>
+            <>{todo.task} - </>
+                
+        </div> 
+        <div>
+            <>{Date.parse(todo.deadline)}</>
+        </div>
+        <br />
+    </div>
+
         
     )
 };

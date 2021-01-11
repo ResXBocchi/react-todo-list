@@ -1,14 +1,16 @@
 import React from 'react';
 import ToDo from './ToDo'
 
-const ToDoList = ({toDoList}) => {
+const ToDoList = ({toDoList, date}) => {
 
     return(
         <div>
             {toDoList.map((todo, id) => {
-                return(
-                    <ToDo todo={todo}  key={id}/>
-                )
+                if (Date.parse(todo.deadline) == Date.parse(date)){
+                    return(
+                        <ToDo todo={todo}  key={id} date={date}/>
+                    )
+                }
             })}         
         </div> 
             

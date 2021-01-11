@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React  from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './ToDoCalendar.css'
@@ -7,7 +7,8 @@ import './ToDoCalendar.css'
 const ToDoCalendar = ({date,onChange}) => {
 
 
-    console.log(date)
+    console.log(((date.getDate() )) + "/" + ((date.getMonth() + 1)) + "/" + date.getFullYear());
+    console.log(Date.parse(date))
 
     return (
       <div>
@@ -15,6 +16,7 @@ const ToDoCalendar = ({date,onChange}) => {
           onChange={onChange}
           value={date}
           locale='pt-BR'
+          showNeighboringMonth={false}
         />
       </div>
     );
