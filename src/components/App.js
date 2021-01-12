@@ -10,7 +10,7 @@ const App = () => {
     
     return(
     <div>
-        <h1>The Schedule</h1>   
+        <h1>A agenda</h1>   
         <div className='calendar'>
             <ToDoCalendar date={date} onChange={onChange}/>
         </div>

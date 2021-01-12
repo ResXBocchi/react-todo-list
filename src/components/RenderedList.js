@@ -9,6 +9,19 @@ const RenderedList = ({date}) =>{
 
     const deleteTask = id => setToDoList(toDoList.filter(todo => todo.id !== id));
 
+    const completeTask = id =>{
+        if(!toDoList[id-1].complete === true){
+            let copy = [...toDoList];
+            copy[id-1].complete = true;
+            setToDoList(copy)
+        }else{
+            let copy = [...toDoList];
+            copy[id-1].complete = false;
+            setToDoList(copy)
+        }
+
+    }
+
     const [ toDoList, setToDoList ] = useState(
         window.localStorage.getItem('todolist')?
         JSON.parse(window.localStorage.getItem('todolist')) :
@@ -37,6 +50,7 @@ const RenderedList = ({date}) =>{
                                     key={id}
                                     date={date}
                                     deleteTask={deleteTask}
+                                    completeTask={completeTask}
                                 />
                             )
                         };return false;
