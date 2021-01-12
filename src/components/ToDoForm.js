@@ -19,7 +19,6 @@ const ToDoForm = ({toDoList,setToDoList,date}) => {
                            deadline:new Date(date).setHours(0,0,0,0),
                            complete: false }];
         setToDoList(copy);
-
       }
    
     const handleChange = (e) => {

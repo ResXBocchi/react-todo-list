@@ -2,6 +2,7 @@ import React from 'react';
 import './ToDo.css'
 import trashCan from '../img/trashCan.png'
 import checkMark from '../img/checkMark.png'
+import caneta from '../img/caneta.png'
 
 const ToDo = ({todo, date, deleteTask,completeTask}) => {
 
@@ -22,6 +23,9 @@ const ToDo = ({todo, date, deleteTask,completeTask}) => {
                     <div className='date'>
                         <>{`${upScaleDate[2]}/${upScaleDate[1]}/${upScaleDate[0]}`}</>
                     </div>
+                    {/* <button className='edit' onClick={() => editTask(todo.id)}>
+                        <img src={caneta} style={{maxWidth:'15px'}} alt="Delete" />
+                    </button> */}
                     <button className='complete' onClick={() => completeTask(todo.id)}>
                         <img src={checkMark} style={{maxWidth:'15px'}} alt="Delete" />
                     </button>                    

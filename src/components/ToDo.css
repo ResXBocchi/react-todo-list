@@ -28,7 +28,10 @@
 .complete{
     background-color: #5C8C39;
     color:#000;}
+.edit{
+    background-color: #006edc;
+    color:#000;}
 .date{
     position: relative;
-    right: 21%;
+    right: 12%;
     margin-top: 5px;}

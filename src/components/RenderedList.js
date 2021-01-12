@@ -7,9 +7,21 @@ import ToDo from './ToDo'
 
 const RenderedList = ({date}) =>{
 
+    const [ toDoList, setToDoList ] = useState(
+        window.localStorage.getItem('todolist')?
+        JSON.parse(window.localStorage.getItem('todolist')) :
+        [],
+    );
+
+    useEffect(() => {
+        localStorage.setItem('todolist', JSON.stringify(toDoList));
+      }, [toDoList]);
+
     const [pendingTasks, setPendingTasks] = useState(0);
 
-    useEffect(() => { setPendingTasks(toDoList.filter(todo => !todo.complete).length) });
+    useEffect(() => {
+        setPendingTasks(toDoList.filter(todo => !todo.complete).length);
+    },[toDoList]);
 
     const deleteTask = id => setToDoList(toDoList.filter(todo => todo.id !== id));
 
@@ -24,17 +36,7 @@ const RenderedList = ({date}) =>{
             setToDoList(copy)
         }
 
-    }
-
-    const [ toDoList, setToDoList ] = useState(
-        window.localStorage.getItem('todolist')?
-        JSON.parse(window.localStorage.getItem('todolist')) :
-        [],
-    );
-
-    useEffect(() => {
-        localStorage.setItem('todolist', JSON.stringify(toDoList));
-      }, [toDoList]);
+    };
 
     return(
         <div className='renderedlist'>
@@ -44,7 +46,7 @@ const RenderedList = ({date}) =>{
                     date={date}
                     toDoList={toDoList}
                     setToDoList={setToDoList}
-                 />
+                />
             </div>
             <div>                
                     {toDoList.map((todo, id) => {
