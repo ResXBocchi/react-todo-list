@@ -8,7 +8,9 @@ const ToDo = ({todo, date}) => {
     return(
         <div className='todo'>
             <div className='task'>
-                <div className={todo.complete? "done": todo.deadline < new Date().setHours(0,0,0,0)? 'expired' : 'pending' }>
+                <div className={todo.complete? "done":
+                                todo.deadline < new Date().setHours(0,0,0,0)?
+                                'expired' : 'pending' }>
                     <>{todo.task}</>                    
                 </div> <hr className='hr'/>
                 <div>
