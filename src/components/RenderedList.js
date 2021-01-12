@@ -7,6 +7,10 @@ import ToDo from './ToDo'
 
 const RenderedList = ({date}) =>{
 
+    const [pendingTasks, setPendingTasks] = useState(0);
+
+    useEffect(() => { setPendingTasks(toDoList.filter(todo => !todo.complete).length) });
+
     const deleteTask = id => setToDoList(toDoList.filter(todo => todo.id !== id));
 
     const completeTask = id =>{
@@ -34,6 +38,7 @@ const RenderedList = ({date}) =>{
 
     return(
         <div className='renderedlist'>
+            Tarefas pendentes:{pendingTasks}
             <div className='form'>
                 <ToDoForm
                     date={date}
