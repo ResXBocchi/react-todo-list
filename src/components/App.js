@@ -11,7 +11,7 @@ const App = () => {
 
     return(
     <div>
-        <h1>To Do List</h1>   
+        <h1>The Schedule</h1>   
         <div className='calendar'>
             <ToDoCalendar date={date} onChange={onChange}/>
         </div><br />
