@@ -6,9 +6,9 @@ const ToDoList = ({toDoList, date}) => {
     return(
         <div>
             {toDoList.map((todo, id) => {
-                if (Date.parse(todo.deadline) === Date.parse(date)){
+                if (todo.deadline === new Date(date).setHours(0,0,0,0)){
                     return(
-                        <ToDo todo={todo}  key={id} deadline={date}/>
+                        <ToDo todo={todo}  key={id} date={date}/>
                     )
                 };return false;
             })}         

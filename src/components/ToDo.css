@@ -1,4 +1,30 @@
 .done{
     text-decoration: line-through;
-    color:#5C8C39;
+    background-color:#5C8C39;
+}
+.pending{
+    background-color: #F68335;
+}
+.expired{
+    text-decoration: line-through;
+    background-color: #c42318;
+}
+
+.todo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.task{
+    margin:5px;
+    min-width:340px;
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+.hr{
+    margin: 0px;
 }
