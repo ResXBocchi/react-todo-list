@@ -7,20 +7,17 @@ import './App.css'
 const App = () => {
 
     const [date, onChange] = useState(new Date());
-
-
-
+    
     return(
     <div>
         <h1>The Schedule</h1>   
         <div className='calendar'>
             <ToDoCalendar date={date} onChange={onChange}/>
-        </div><br />
-
+        </div>
+        <br />
         <div>
             <RenderedList date={date}/>
         </div>
-
     </div> 
         
     )

@@ -4,13 +4,6 @@ import './ToDoForm.css'
 const ToDoForm = ({toDoList,setToDoList,date}) => {
     const [userInput, setUserInput] = useState('');
     
-    const addTask = (userInput) => {        
-        let copy = [...toDoList];
-        copy = [...copy, { id: toDoList.length + 1, task: userInput, deadline:new Date(date).setHours(0,0,0,0), complete: false }];
-        setToDoList(copy);
-
-      }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (userInput){
@@ -18,12 +11,17 @@ const ToDoForm = ({toDoList,setToDoList,date}) => {
             setUserInput('');
         };
     }
-    
+
+    const addTask = (userInput) => {        
+        let copy = [...toDoList];
+        copy = [...copy, { id: toDoList.length + 1, task: userInput, deadline:new Date(date).setHours(0,0,0,0), complete: false }];
+        setToDoList(copy);
+
+      }
+   
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value)
         }
-
-
 
     return (
         <form  onSubmit={handleSubmit}>
