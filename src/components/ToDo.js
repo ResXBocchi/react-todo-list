@@ -3,7 +3,8 @@ import './ToDo.css'
 
 const ToDo = ({todo}) => {
 
-    let customDeadline = todo.deadline.slice(0,10).split('-');
+    let date = JSON.stringify(new Date(Date.parse(todo.deadline)))
+    let upScaleDate = date.slice(1,11).split('-')
 
     return(
     <div className='todo'>
@@ -12,7 +13,7 @@ const ToDo = ({todo}) => {
                 
         </div> 
         <div>
-            <>{`${customDeadline[2]}/${customDeadline[1]}/${customDeadline[0]}`}</>
+            <>{`${upScaleDate[2]}/${upScaleDate[1]}/${upScaleDate[0]}`}</>
         </div>
     </div>
 

@@ -6,10 +6,6 @@ import './ToDoCalendar.css'
 
 const ToDoCalendar = ({date,onChange}) => {
 
-
-    console.log(((date.getDate() )) + "/" + ((date.getMonth() + 1)) + "/" + date.getFullYear());
-    console.log(Date.parse(date))
-
     return (
       <div>
         <Calendar

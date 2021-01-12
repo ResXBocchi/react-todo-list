@@ -13,11 +13,10 @@ const ToDoForm = ({toDoList,setToDoList,date}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(userInput)
         if (userInput){
             addTask(userInput);
             setUserInput('');
-        }
+        };
     }
     
     const handleChange = (e) => {

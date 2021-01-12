@@ -8,7 +8,7 @@ const ToDoList = ({toDoList, date}) => {
             {toDoList.map((todo, id) => {
                 if (Date.parse(todo.deadline) === Date.parse(date)){
                     return(
-                        <ToDo todo={todo}  key={id} date={date}/>
+                        <ToDo todo={todo}  key={id} deadline={date}/>
                     )
                 };return false;
             })}         
