@@ -29,23 +29,33 @@ const RenderedList = ({date}) =>{
              
 
     const editTask = id => {
-        let newTask = JSON.parse(localStorage.todolist);
-        newTask[id].task = window.prompt('Update your value',newTask[id].task);
-        if (newTask[id].task !== ''){
-            setToDoList(newTask);
-            localStorage.setItem("todolist", JSON.stringify(toDoList));
-        }};
+        
+        const newTask = toDoList.map((todo) =>{
+            if (todo.id === id){
+                const editedItem={
+                    ...todo,
+                    task: window.prompt('Update your value',todo.task),
+                };
+                return editedItem;
+            }
+            return todo
+        });
+        setToDoList(newTask)
+    }
 
     const completeTask = id =>{
-        if(!toDoList[id].complete === true){
-            let copy = [...toDoList];
-            copy[id].complete = true;
-            setToDoList(copy)
-        }else{
-            let copy = [...toDoList];
-            copy[id].complete = false;
-            setToDoList(copy)
-        }
+        
+        const newTask = toDoList.map((todo) =>{
+            if (todo.id === id){
+                const completedItem={
+                    ...todo,
+                    complete: !todo.complete,
+                };
+                return completedItem;
+            }
+            return todo
+        });
+        setToDoList(newTask)
     };
 
     return(
