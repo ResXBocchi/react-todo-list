@@ -21,7 +21,7 @@ const RenderedList = ({date}) =>{
 
     useEffect(() => {
         setPendingTasks(toDoList.filter(todo => !todo.complete &&
-            todo.deadline > new Date().setHours(0,0,0,0)).length);
+            todo.deadline >= new Date().setHours(0,0,0,0)).length);
     },[toDoList]);
 
     const deleteTask = id =>{
@@ -32,9 +32,9 @@ const RenderedList = ({date}) =>{
         let newTask = JSON.parse(localStorage.todolist);
         newTask[id].task = window.prompt('Update your value',newTask[id].task);
         if (newTask[id].task !== ''){
-        setToDoList(newTask);
-        localStorage.setItem("todolist", JSON.stringify(toDoList));
-    }};
+            setToDoList(newTask);
+            localStorage.setItem("todolist", JSON.stringify(toDoList));
+        }};
 
     const completeTask = id =>{
         if(!toDoList[id].complete === true){
