@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
-import ToDoCalendar from './ToDoCalendar';
-import RenderedList from './RenderedList';
+import ToDoCalendar from './components/ToDoCalendar';
+import RenderedList from './components/RenderedList';
 import './App.css'
 
 

@@ -1,6 +1,25 @@
 .submitbutton{
     min-height: 20px;
     min-width:90px;
+    border-radius:10px;
+    background-color:#006edc;
+    color:white;
+    border-width:0px;
+    width:100px;
+    height: 25px;
+    
+}
+.submitbutton:hover{
+    min-height: 20px;
+    min-width:90px;
+    border-radius:10px;
+    background-color:#4da0f3;
+    color:white;
+    border-width:0px;
+    width:100px;
+    height: 25px;
+    cursor: pointer;
+    
 }
 
 .input{

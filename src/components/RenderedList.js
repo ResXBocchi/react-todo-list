@@ -20,10 +20,18 @@ const RenderedList = ({date}) =>{
     const [pendingTasks, setPendingTasks] = useState(0);
 
     useEffect(() => {
-        setPendingTasks(toDoList.filter(todo => !todo.complete).length);
+        setPendingTasks(toDoList.filter(todo => !todo.complete &&
+            todo.deadline > new Date().setHours(0,0,0,0)).length);
     },[toDoList]);
 
     const deleteTask = id => setToDoList(toDoList.filter(todo => todo.id !== id));
+
+    const editTask = id => {
+        let newTask = JSON.parse(localStorage.todolist);
+        newTask[id-1].task = window.prompt('Update your value',newTask[id-1].task);
+        setToDoList(newTask);
+        localStorage.setItem("todolist", JSON.stringify(toDoList));
+    }
 
     const completeTask = id =>{
         if(!toDoList[id-1].complete === true){
@@ -58,6 +66,7 @@ const RenderedList = ({date}) =>{
                                     date={date}
                                     deleteTask={deleteTask}
                                     completeTask={completeTask}
+                                    editTask={editTask}
                                 />
                             )
                         };return false;
