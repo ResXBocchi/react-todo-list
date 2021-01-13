@@ -5,9 +5,9 @@ body{
     display:flex;
     justify-content: center;}
 h1{
-    color:#5C8C39;}
+    color:#c42318;}
 .omni{
     background-color:white;
-    min-height: 70vh;
-    margin: 0% 0%;
+    height: 100vh;
+    margin: 0% 0%;    
 }

@@ -10,7 +10,7 @@ const App = () => {
     
     return(
     <div className='omni'>
-        <h1>Task Manager</h1>   
+        <h1>Get it done</h1>
         <div className='calendar'>
             <ToDoCalendar date={date} onChange={onChange}/>
         </div>
