@@ -1,7 +1,13 @@
 body{
-    text-align: center;}
+    text-align: center;
+}
 .calendar{
     display:flex;
     justify-content: center;}
 h1{
     color:#5C8C39;}
+.omni{
+    background-color:white;
+    min-height: 70vh;
+    margin: 0% 0%;
+}

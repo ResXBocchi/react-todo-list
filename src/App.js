@@ -9,8 +9,8 @@ const App = () => {
     const [date, onChange] = useState(new Date());
     
     return(
-    <div>
-        <h1>A agenda</h1>   
+    <div className='omni'>
+        <h1>Task Manager</h1>   
         <div className='calendar'>
             <ToDoCalendar date={date} onChange={onChange}/>
         </div>
