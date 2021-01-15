@@ -13,7 +13,7 @@ const ToDoCalendar = ({date,onChange,deadlineList}) => {
           value={date}
           locale='pt-BR'
           showNeighboringMonth={false}
-          tileContent={({ date, view }) => view === 'month' && deadlineList.includes(date.setHours(0,0,0,0)) ? '*' : null}
+          tileContent={({ date, view }) => view === 'month' && deadlineList.includes(date.setHours(0,0,0,0)) ? '∘' : null}
         />
       </div>
     );
