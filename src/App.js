@@ -24,7 +24,7 @@ const App = () => {
                 if(!todo.complete && todo.deadline >= new Date().setHours(0,0,0,0)){
                     dls.push(todo.deadline);
                 }
-            })
+            return null})
             setDeadlineList(dls);
         
     },[toDoList])
