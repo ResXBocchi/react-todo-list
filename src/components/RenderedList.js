@@ -5,13 +5,9 @@ import ToDo from './ToDo'
 
 
 
-const RenderedList = ({date}) =>{
+const RenderedList = ({date,toDoList,setToDoList}) =>{
 
-    const [ toDoList, setToDoList ] = useState(
-        window.localStorage.getItem('todolist')?
-        JSON.parse(window.localStorage.getItem('todolist')) :
-        [],
-    );
+
     const [ pendingTasks, setPendingTasks ] = useState(0);
 
     useEffect(() => {
@@ -27,10 +23,12 @@ const RenderedList = ({date}) =>{
     const deleteTask = id =>{
         setToDoList(toDoList.filter(todo => todo.id !== id))};
              
+    
+
 
     const editTask = id => {
         
-        const newTask = toDoList.map((todo) =>{
+        const editedTask = toDoList.map((todo) =>{
             if (todo.id === id){
                 const editedItem={
                     ...todo,
@@ -40,12 +38,12 @@ const RenderedList = ({date}) =>{
             }
             return todo
         });
-        setToDoList(newTask)
+        setToDoList(editedTask)
     }
 
     const completeTask = id =>{
         
-        const newTask = toDoList.map((todo) =>{
+        const completedTask = toDoList.map((todo) =>{
             if (todo.id === id){
                 const completedItem={
                     ...todo,
@@ -55,7 +53,7 @@ const RenderedList = ({date}) =>{
             }
             return todo
         });
-        setToDoList(newTask)
+        setToDoList(completedTask)
     };
 
     return(
